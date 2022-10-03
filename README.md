@@ -2,8 +2,7 @@
 template CPP project for vim. Includes .vimrc, CMakelists.txt, boileprplate code for app and shered lib
 
 # plugin manager for vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     
 # install plugins - within vim
 :PlugInstall
