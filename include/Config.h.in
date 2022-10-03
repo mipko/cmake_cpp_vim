@@ -1,0 +1,10 @@
+//cmake configuration file
+//this file is CMAKE template that will generate Config.h file
+//Config.h file will contain major and minor version for the project
+//
+#pragma once
+
+#define MAJOR_VERSION @template_VERSION_MAJOR@
+#define MINOR_VERSION @template_VERSION_MINOR@
+#define PATCH_VERSION @template_VERSION_PATCH@
+
