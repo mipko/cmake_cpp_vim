@@ -24,9 +24,13 @@ cd ~/.vim/plugged/YouCompleteMe/
 
 # To compile DEBUG version within the vim
 - C-M bd
+- build files are stored within the build/Debug
+- binary artefacts are stored within the bin/Debug
 
 # To compile RELEASE version within the vim
 - C-M br
+- build files are stored within the build/Release
+- binary artefacts are stored within the bin/Release
 
 # To run DEBUG version within the vim
 - F6
@@ -39,3 +43,6 @@ cd ~/.vim/plugged/YouCompleteMe/
 
 # WIP 
 - debugging (gdb integration) within the VIM
+
+# toggle NerdTree
+- F3
