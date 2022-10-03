@@ -74,7 +74,7 @@ let g:localvimrc_ask=0
 let g:ycm_key_list_stop_completion = ['<C-x>']
 
 " Set filetypes where YCM will be turned on
-let g:ycm_filetype_whitelist = { 'cpp':1, 'h':2, 'hpp':3, 'c':4, 'cxx':5 }
+let g:ycm_filetype_whitelist = { 'cpp':1, 'h':2, 'hpp':3, 'c':4, 'cxx':5, 'in':6 }
 
 " Close preview window after completing the insertion
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -123,7 +123,10 @@ endfunction
 
 let g:localvimrc_event=["VimEnter"]
 
-let g:projectname = system("grep -oP \'project\\(\\K.*?(?= )\' CMakeLists.txt \| tr -d \'\\n\'")
+let g:projectname = matchstr(readfile(expand('CMakeLists.txt')), 'set(_PROJECT_NAME_')
+let g:projectname = matchstr(g:projectname, ' \zs.\{-}\ze)')
+"system("awk '$1 ~ /set(_PROJECT_NAME_/ {gsub(")", ""); print $2}' CMakeLists.txt | tr -d '\\n\'")
+"let g:projectname = system("grep -oP \'set\\(project\\(\\K.*?(?= )\' CMakeLists.txt \| tr -d \'\\n\'")
 
 nnoremap <S-tab> :tabn<CR>
 inoremap <S-tab> <ESC> :tabn<CR>

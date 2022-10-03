@@ -1,8 +1,12 @@
 #1. postavimo ogranicenje minimalne verzije cmake
 cmake_minimum_required(VERSION 3.20)
 
+#!!!! promenite ime u ime vaseg projekte, npr tracker
+set(_PROJECT_NAME_ template)
+
+
 #2. dodamo projekat, dodamo ime i verzij
-project(template VERSION 1.0.0)
+project(${_PROJECT_NAME_} VERSION 1.0.0)
 
 #3. postavimo opciju da se generise COMPILATION DB, potrebno je za YCM
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -16,10 +20,10 @@ configure_file(include/Config.h.in
                ${CMAKE_CURRENT_SOURCE_DIR}/include/Config.h)
 
 #6. dodamo binary programa
-add_executable(template ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 #7. definisemo include directories
-target_include_directories(template PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 #zaista nema Config.h fajla u ovom folderu ?! cccc :)
 #hajde da izbildujemo projekat ipak, mozda uspe ;)
@@ -29,6 +33,6 @@ target_include_directories(template PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
 #8. podesimo gde ce se cuvati izbildovani binaries
-set_target_properties(template 
+set_target_properties(${PROJECT_NAME} 
   PROPERTIES
   RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin/$<CONFIG>")
