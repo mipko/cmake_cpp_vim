@@ -3,8 +3,12 @@ template CPP project for vim. Includes .vimrc, CMakelists.txt, boileprplate code
 
 # plugin manager for vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    
-# install plugins - within vim
+
+- backup your ~/.vimrc
+- copy vim/.vimrc file to ~/.vimrc
+
+
+# install plugins - within vim; vim will complain a lot at this first startup
 :PlugInstall
 
 # compile YcmdMeCompleter engine
